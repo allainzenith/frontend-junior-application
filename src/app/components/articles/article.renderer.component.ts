@@ -21,6 +21,8 @@ export class ArticleRendererComponent implements OnInit {
     ngOnInit() {
         for (const article of this.articles) {
             const resolveArticle = articleMapper.get(article.type);
+            
+            console.log(articleMapper.get(article.type))
 
             if (resolveArticle) {
                 const componentFactory = this.componentFactoryResolver.resolveComponentFactory(resolveArticle);

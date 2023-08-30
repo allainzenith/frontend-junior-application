@@ -6,18 +6,17 @@ import { ArticleRendererComponent } from "./article.renderer.component";
 
 @NgModule({
     imports: [
-        CommonModule
+        CommonModule,
     ],
     declarations: [
         ...articleEntries,
         ArticleRendererComponent
-    ],
-    entryComponents: [
-        ...articleEntries
     ],
     exports: [
         ArticleRendererComponent,
         ...articleEntries
     ]
 })
+
+
 export class ArticleModule { }

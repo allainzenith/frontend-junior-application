@@ -12,7 +12,7 @@ export class NormalArticle extends Article {
     description: string;
 }
 
-export class FeaturedArticle extends  Article{
+export class FeaturedArticle extends Article{
     featureImgUrl: string;
 }
 

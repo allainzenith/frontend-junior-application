@@ -21,6 +21,7 @@ const registerArticle = (articleType: ArticleType, component: Type<AbstractArtic
     }
 
     articleMapper.set(articleType, component);
+    console.log("article set");
 };
 
 registerArticle(ArticleType.NORMAL, ArticleNormalComponent);

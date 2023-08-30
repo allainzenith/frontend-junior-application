@@ -1,6 +1,5 @@
 import { Component, Input } from "@angular/core";
-
-import { FeaturedArticle } from "src/app/model/article";
+import { FeaturedArticle, NormalArticle, VideoArticle } from "src/app/model/article";
 import { AbstractArticleComponent } from "../abstract.article.component";
 
 @Component({
