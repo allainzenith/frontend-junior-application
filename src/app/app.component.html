@@ -14,24 +14,45 @@
   <div class="article-video">
     <ng-container *ngIf="videoArticleHighlight">
       <!-- put the title and the article video component here -->
+      <ng-container *ngIf="articles">
+          <article-video-component></article-video-component>
+      </ng-container>
     </ng-container>
   </div>
 
   <!-- Feel free to remove this holder -->
   <h3>List of article goes here: (do not include the recently published video article in the list if you already placed it at the top)</h3>
 
+  <!-- For filtering the list of articles based on article type -->
+  <mat-form-field>
+    <mat-label>Select an option</mat-label>
+    <mat-select [(ngModel)]="selectedValue" (ngModelChange)="filterArticles()">
+      <mat-option value="NORMAL">Normal</mat-option>
+      <mat-option value="FEATURED">Featured</mat-option>
+      <mat-option value="FEATURED_AD">Featured Ad</mat-option>
+      <mat-option value="VIDEO">Video</mat-option>
+    </mat-select>
+  </mat-form-field>
+  
   <!-- To put the articles inside this container -->
   <div class="article-container">
     <div class="article-list-holder">
-      <ng-container *ngIf="articles">
-        <article-renderer-component [articles]="articles">
-          <article-normal-component></article-normal-component>
-        </article-renderer-component>
+      <ng-container *ngIf="normalArticle">
+        <div *ngIf="articles">
+          <article-renderer-component [articles]="filtered_results">
+            <article-normal-component></article-normal-component>
+            <!-- <article-feature-component></article-feature-component> -->
+            <!-- {{article}} -->
+
+          </article-renderer-component>
+        </div>
       </ng-container>
     </div>
-  </div><!--.article-container-->
-  
-  <div class="bonus-point-container">
+  </div>
+  <!-- article-container -->
+
+
+  <!-- <div class="bonus-point-container">
     <h3>Instructions:</h3>
     <ul>
       <li>Fix the build</li>
@@ -46,5 +67,5 @@
       <li>Get real data from an API to replace our mock data</li>
       <li>Apply angular router to show an article detail page when you open it from the list</li>
     </ul>
-  </div> <!--.bonus-point-container -->
+  </div> .bonus-point-container -->
 </div>

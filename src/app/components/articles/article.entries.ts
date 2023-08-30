@@ -8,22 +8,23 @@ import { ArticleVideoComponent } from "./video/article.video.component";
 
 export const articleEntries: Type<AbstractArticleComponent>[] = [
     ArticleFeatureComponent,
-    ArticleNormalComponent
+    ArticleNormalComponent,
+    ArticleVideoComponent
 ];
 
-const registerArticle = (articleType: ArticleType, component: Type<AbstractArticleComponent>) => {
+export const registerArticle = (articleType: ArticleType, component: Type<AbstractArticleComponent>) => {
     if (!articleEntries.includes(component)) {
         throw new Error(`${component} is not yet registered.`);
     }
 
-    if (articleMapper.has(articleType)) {
-        throw new Error(`${articleType} articleType already exists.`);
-    }
+    // if (articleMapper.has(articleType)) {
+    //     throw new Error(`${articleType} articleType already exists.`);
+    // }
 
     articleMapper.set(articleType, component);
-    console.log("article set");
 };
 
-registerArticle(ArticleType.NORMAL, ArticleNormalComponent);
-registerArticle(ArticleType.FEATURED, ArticleFeatureComponent);
-registerArticle(ArticleType.VIDEO, ArticleVideoComponent);
+// registerArticle(ArticleType.NORMAL, ArticleNormalComponent);
+// registerArticle(ArticleType.FEATURED, ArticleFeatureComponent);
+// registerArticle(ArticleType.VIDEO, ArticleVideoComponent);
+

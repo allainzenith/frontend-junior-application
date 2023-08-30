@@ -21,9 +21,6 @@ export class ArticleRendererComponent implements OnInit {
     ngOnInit() {
         for (const article of this.articles) {
             const resolveArticle = articleMapper.get(article.type);
-            
-            console.log(articleMapper.get(article.type))
-
             if (resolveArticle) {
                 const componentFactory = this.componentFactoryResolver.resolveComponentFactory(resolveArticle);
                 const componentRef = this.viewContainerRef.createComponent(componentFactory);
@@ -34,11 +31,14 @@ export class ArticleRendererComponent implements OnInit {
                 hostElement.insertAdjacentElement("afterbegin", this.addArticleTitle(article.title));
 
                 componentRef.instance.article = article;
+                console.log(article)
                 componentRef.changeDetectorRef.detectChanges();
             } else {
                 console.warn(`component not implemented yet for this type ${article.type}.`);
             }
+
         }
+
     }
 
     private addArticleTitle(title: string) {

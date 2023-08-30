@@ -8,6 +8,6 @@ import { AbstractArticleComponent } from "../abstract.article.component";
     styleUrls: ['./article.feature.component.scss']
 })
 export class ArticleFeatureComponent extends AbstractArticleComponent {
-
     @Input() article: FeaturedArticle;
+
 }
