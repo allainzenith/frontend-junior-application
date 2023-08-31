@@ -38,8 +38,8 @@
   </div>
 
   <!-- To put the articles inside this container -->
-  <div class="article-container">
-    <div class="article-list-holder" fxLayout="row" fxLayoutGap="30px">
+  <div class="article-container" fxLayout="row">
+    <div class="article-list-holder">
       <ng-container *ngIf="articles">
         <article-renderer-component [articles]="articles"></article-renderer-component>
       </ng-container>

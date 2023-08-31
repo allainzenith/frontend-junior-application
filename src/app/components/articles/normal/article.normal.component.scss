@@ -6,7 +6,9 @@ mat-card-title{
 }
 
 .normal-card {
-    margin-right: 10px;
+    //margin-right: 10px;
+    max-height: 280px;
+    overflow: hidden;
 }
 
 
