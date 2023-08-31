@@ -2,7 +2,14 @@
 
 }
 
-.article-container{
-    display:flex;
-}
 
+.article-list-holder {
+    display: flex;
+    width:100%;
+  }
+
+.filter-container{
+    width:100%;
+    align-items: right;
+    text-align: right;
+}

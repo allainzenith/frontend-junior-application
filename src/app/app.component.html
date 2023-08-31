@@ -24,24 +24,28 @@
   <h3>List of article goes here: (do not include the recently published video article in the list if you already placed it at the top)</h3>
 
   <!-- For filtering the list of articles based on article type -->
-  <mat-form-field>
-    <mat-label>Select an option</mat-label>
-    <mat-select [(ngModel)]="selectedValue" (ngModelChange)="filterArticles()">
-      <mat-option value="NORMAL">Normal</mat-option>
-      <mat-option value="FEATURED">Featured</mat-option>
-      <mat-option value="FEATURED_AD">Featured Ad</mat-option>
-      <mat-option value="VIDEO">Video</mat-option>
-    </mat-select>
-  </mat-form-field>
+  <div class="filter-container" fxLayout="row" fxLayoutAlign="end">
+    <mat-form-field>
+      <mat-label>Select an option</mat-label>
+      <mat-select [(ngModel)]="selectedValue" (ngModelChange)="filterArticles()">
+        <mat-option value="">All</mat-option>
+        <mat-option value="NORMAL">Normal</mat-option>
+        <mat-option value="FEATURED">Featured</mat-option>
+        <mat-option value="FEATURED_AD">Featured Ad</mat-option>
+        <mat-option value="VIDEO">Video</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
 
   <!-- To put the articles inside this container -->
-    <div class="article-container">
-      <div class="article-list-holder">
-        <ng-container *ngIf="articles">
-          <article-renderer-component [articles]="articles"></article-renderer-component>
-        </ng-container>
-      </div>
-    </div><!--.article-container-->
+  <div class="article-container">
+    <div class="article-list-holder" fxLayout="row" fxLayoutGap="30px">
+      <ng-container *ngIf="articles">
+        <article-renderer-component [articles]="articles"></article-renderer-component>
+      </ng-container>
+    </div>
+  </div>
+  <!--.article-container-->
 
 
   <!-- <div class="bonus-point-container">

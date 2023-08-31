@@ -51,7 +51,7 @@ export class AppComponent implements OnInit {
 
   filterArticles() {
     if (this.selectedValue) {
-      this.filtered_results = this.results.filter(item => item.type === this.selectedValue);
+      this.filtered_results = (this.selectedValue === "") ? this.results : this.results.filter(item => item.type === this.selectedValue);
     } else {
       this.filtered_results = this.results;
     }

@@ -5,7 +5,8 @@ import { AbstractArticleComponent } from "../abstract.article.component";
 
 @Component({
     selector: 'article-normal-component',
-    templateUrl: './article.normal.component.html'
+    templateUrl: './article.normal.component.html',
+    styleUrls: ['./article.normal.component.scss']
 })
 export class ArticleNormalComponent extends AbstractArticleComponent {
     @Input() article: NormalArticle;
