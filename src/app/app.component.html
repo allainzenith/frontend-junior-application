@@ -33,23 +33,15 @@
       <mat-option value="VIDEO">Video</mat-option>
     </mat-select>
   </mat-form-field>
-  
+
   <!-- To put the articles inside this container -->
   <div class="article-container">
     <div class="article-list-holder">
-      <ng-container *ngIf="normalArticle">
-        <div *ngIf="articles">
-          <article-renderer-component [articles]="filtered_results">
-            <article-normal-component></article-normal-component>
-            <!-- <article-feature-component></article-feature-component> -->
-            <!-- {{article}} -->
-
-          </article-renderer-component>
-        </div>
+      <ng-container *ngIf="articles">
+        <article-renderer-component [articles]="articles"></article-renderer-component>
       </ng-container>
     </div>
-  </div>
-  <!-- article-container -->
+  </div><!--.article-container-->
 
 
   <!-- <div class="bonus-point-container">

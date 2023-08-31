@@ -32,22 +32,30 @@ export class AppComponent implements OnInit {
   filtered_results: Article[];
 
   videoArticleHighlight: VideoArticle;
-  normalArticle: NormalArticle;
 
   get articles() {
-    return this.results;
+    return this.filtered_results;
   }
+
 
   ngOnInit(): void {
     this.apiService.getArticles()
-    .subscribe(result => {
-      this.results = result;
-      this.mapArticle(this.results);
-      this.cdr.markForCheck();
-      this.filtered_results = this.results;
-    });
-
+      .subscribe(result => {
+        this.results = result;
+        this.mapArticle(this.results);
+        this.cdr.markForCheck();
+        this.filtered_results = this.results; 
+      });
   }
+
+  filterArticles(): void {
+    if (this.selectedValue) {
+      this.filtered_results = this.results.filter(item => item.type === this.selectedValue);
+    } else {
+      this.filtered_results = this.results;
+    }
+  }
+
 
   private mapArticle(results:Article[]){
     for (const result of results) {
@@ -77,13 +85,8 @@ export class AppComponent implements OnInit {
     }
   }
 
-  filterArticles(){
-    if (this.selectedValue) {
-      this.filtered_results = this.results.filter(item => item.type === this.selectedValue);
-      console.log(this.filtered_results)
-    } else {
-      console.log(this.results)
-    }
-  }
+
+
+
   
 }
