@@ -31,7 +31,7 @@ export class ArticleRendererComponent implements OnInit {
     renderComponent(){
         for (const article of this.articles) {
             const resolveArticle = articleMapper.get(article.type);
-            console.log("this is activated")
+
             if (resolveArticle) {
                 const componentFactory = this.componentFactoryResolver.resolveComponentFactory(resolveArticle);
                 const componentRef = this.viewContainerRef.createComponent(componentFactory);
@@ -39,7 +39,7 @@ export class ArticleRendererComponent implements OnInit {
                 const hostElement = <HTMLElement>componentRef.location.nativeElement;
 
                 hostElement.classList.add('article-item');
-                hostElement.insertAdjacentElement("afterbegin", this.addArticleTitle(article.title));
+                //hostElement.insertAdjacentElement("afterbegin", this.addArticleTitle(article.title));
 
                 componentRef.instance.article = article;
                 componentRef.changeDetectorRef.detectChanges();
@@ -50,11 +50,11 @@ export class ArticleRendererComponent implements OnInit {
         }
     }
 
-    private addArticleTitle(title: string) {
-        const heading = document.createElement('h2');
-        heading.classList.add('article-title');
-        heading.innerText = title;
-        heading.title = title;
-        return heading;
-    }
+    // private addArticleTitle(title: string) {
+    //     const heading = document.createElement('h2');
+    //     heading.classList.add('article-title');
+    //     heading.innerText = title;
+    //     heading.title = title;
+    //     return heading;
+    // }
 }

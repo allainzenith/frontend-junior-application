@@ -12,6 +12,7 @@ import { ArticleFeatureComponent } from './components/articles/feature';
 import { ArticleNormalComponent } from './components/articles/normal';
 import { ArticleVideoComponent } from './components/articles/video';
 import { registerArticle } from './components/articles/article.entries';
+import { ArticleFeaturedAdComponent } from './components/articles/featured ad';
 
 @Component({
   selector: 'app-root',
@@ -38,7 +39,7 @@ export class AppComponent implements OnInit {
   }
 
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.apiService.getArticles()
       .subscribe(result => {
         this.results = result;
@@ -48,7 +49,7 @@ export class AppComponent implements OnInit {
       });
   }
 
-  filterArticles(): void {
+  filterArticles() {
     if (this.selectedValue) {
       this.filtered_results = this.results.filter(item => item.type === this.selectedValue);
     } else {
@@ -74,7 +75,7 @@ export class AppComponent implements OnInit {
           component = ArticleVideoComponent;
           break;
         case ArticleType.FEATURED_AD:
-            component = ArticleFeatureComponent;
+            component = ArticleFeaturedAdComponent;
             break;
         default:
           throw new Error(`Unsupported article type: ${type}`);
