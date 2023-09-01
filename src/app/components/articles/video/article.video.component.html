@@ -1,2 +1,6 @@
-<div class="center"><h2>{{article.title}}</h2></div>
-<iframe title="vimeo-player" [src]="safeVideoUrl" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+<mat-card class="video-card" fxFlex.gt-xs="calc(20% - 10px)" fxFlex.lt-sm="100%">
+    <mat-card-header>
+      <mat-card-title>{{article.title}}</mat-card-title>
+    </mat-card-header>
+    <iframe title="vimeo-player" [src]="safeVideoUrl" width="auto" height="auto" frameborder="0" allowfullscreen></iframe>
+</mat-card>

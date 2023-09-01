@@ -1,20 +1,14 @@
 <header>
-  <div style="width:100%">
-    <img
-    alt="Zyllem Logo"
-    src="https://static.wixstatic.com/media/15e42d_92ebfc9a2c37467ba65d2117dc5b9fa4~mv2_d_3850_1775_s_2.png/v1/fill/w_194,h_80,al_c,q_80,usm_0.66_1.00_0.01/15e42d_92ebfc9a2c37467ba65d2117dc5b9fa4~mv2_d_3850_1775_s_2.webp"
-    />
-
-    <div style="text-align: right;width:40%">
-      <mat-tab-group animationDuration="100ms">
-        <mat-tab label="First">Content 1</mat-tab>
-        <mat-tab label="Second">Content 2</mat-tab>
-        <mat-tab label="Third">Content 3</mat-tab>
-      </mat-tab-group>
+  <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+    <div style="text-align: left; width: 30%">
+      <img
+        alt="Zyllem Logo"
+        src="https://static.wixstatic.com/media/15e42d_92ebfc9a2c37467ba65d2117dc5b9fa4~mv2_d_3850_1775_s_2.png/v1/fill/w_194,h_80,al_c,q_80,usm_0.66_1.00_0.01/15e42d_92ebfc9a2c37467ba65d2117dc5b9fa4~mv2_d_3850_1775_s_2.webp"
+      />
     </div>
-    
   </div>
 </header>
+
 
 <div class="container">
 
@@ -23,39 +17,46 @@
 
   <div class="article-video">
     <ng-container *ngIf="videoArticleHighlight">
-        <article-video-component [article]="videoArticleHighlight"></article-video-component>
+        <article-video_featured-component [article]="videoArticleHighlight" ></article-video_featured-component>
+        <!-- <article -->
     </ng-container>
   </div>
 
   <!-- Feel free to remove this holder -->
   <!-- <h3>List of article goes here: (do not include the recently published video article in the list if you already placed it at the top)</h3> -->
 
-  <!-- For filtering the list of articles based on article type -->
-  <div class="filter-container" fxLayout="row" fxLayoutAlign="end">
-    <mat-form-field>
-      <mat-label>Select an option</mat-label>
-      <mat-select [(ngModel)]="selectedValue" (ngModelChange)="filterArticles()">
-        <mat-option value="">All</mat-option>
-        <mat-option value="NORMAL">Normal</mat-option>
-        <mat-option value="FEATURED">Featured</mat-option>
-        <mat-option value="FEATURED_AD">Featured Ad</mat-option>
-        <mat-option value="VIDEO">Video</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
 
   <!-- To put the articles inside this container -->
   <div class="article-container">
+
+    <!-- For filtering the list of articles based on article type -->
+    <div class="filter-container" fxLayout="row" fxLayoutAlign="end">
+      <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <mat-select [(ngModel)]="selectedValue" (ngModelChange)="filterArticles()">
+          <mat-option value="">All</mat-option>
+          <mat-option value="NORMAL">Normal</mat-option>
+          <mat-option value="FEATURED">Featured</mat-option>
+          <mat-option value="FEATURED_AD">Featured Ad</mat-option>
+          <mat-option value="VIDEO">Video</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
     <div 
+    class="article-list-holder"
     fxLayout="row wrap"
     fxLayout.gt-xs="row"
     fxLayout.lt-sm="column"
     fxLayoutGap="10px"
+    
     >
       <ng-container *ngIf="articles">
         <article-renderer-component [articles]="articles"></article-renderer-component>
       </ng-container>     
     </div>
+
+
   </div>
   <!--.article-container-->
 
@@ -76,3 +77,30 @@
     </ul>
   </div> .bonus-point-container -->
 </div>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img
+        alt="Zyllem Logo"
+        src="https://static.wixstatic.com/media/15e42d_92ebfc9a2c37467ba65d2117dc5b9fa4~mv2_d_3850_1775_s_2.png/v1/fill/w_194,h_80,al_c,q_80,usm_0.66_1.00_0.01/15e42d_92ebfc9a2c37467ba65d2117dc5b9fa4~mv2_d_3850_1775_s_2.webp"
+        />
+      </div>
+      <div class="footer-links">
+
+        <ul>
+          <li><a href="https://www.zyllem.com/">Home</a></li>
+          <li><a href="https://www.zyllem.com/success-stories">About Us</a></li>
+          <li><a href="https://www.zyllem.com/product">Services</a></li>
+          <li><a href="https://www.zyllem.com/contact-us">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-info">
+
+      &copy; 2023 Zyllem. All rights reserved.
+    </div>
+  </div>
+</footer>
+

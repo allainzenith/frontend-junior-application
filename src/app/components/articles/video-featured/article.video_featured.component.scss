@@ -1,0 +1,25 @@
+:host {
+    iframe {
+        width: 100%;
+        padding:40px;
+    }
+}
+
+.center {
+    width: 100%;
+    text-align: center;
+}
+
+.underline-container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding-bottom: 20px;
+}
+
+.underline{
+    background-color:#6440BB;
+    height:10px;
+    width:70px;
+}

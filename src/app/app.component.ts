@@ -4,7 +4,7 @@ import {
 } from '@angular/core';
 
 import { ZyllemApiService } from "./app.service";
-import { Article, NormalArticle, VideoArticle } from './model/article';
+import { Article, VideoArticle } from './model/article';
 import { ArticleType } from './model/article';
 import { AbstractArticleComponent } from './components/articles/abstract.article.component';
 import { Type } from "@angular/core";
@@ -99,6 +99,8 @@ export class AppComponent implements OnInit {
 
     return this.results.filter((item) => item !== videoArticle);
   }
+
+
 
 
 

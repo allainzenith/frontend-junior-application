@@ -12,7 +12,6 @@ import { articleMapper } from "./article.mapper";
 export class ArticleRendererComponent implements OnInit {
 
     @Input() articles: Article[];
-    @Input() videoArticleHighlight: VideoArticle;
 
     constructor(
         private readonly viewContainerRef: ViewContainerRef,

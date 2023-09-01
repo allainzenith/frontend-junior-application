@@ -11,7 +11,6 @@ import {MatSelectModule} from '@angular/material/select';
 import {NgFor} from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
-import { MatTabsModule } from '@angular/material/tabs';
 @NgModule({
   declarations: [
     AppComponent
@@ -25,8 +24,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     NgFor,
     FormsModule,
     FlexLayoutModule,
-    MatCardModule,
-    MatTabsModule
+    MatCardModule
   ],
   providers: [ZyllemApiService],
   bootstrap: [AppComponent]

@@ -6,12 +6,14 @@ import { ArticleFeatureComponent } from "./feature/article.feature.component";
 import { ArticleNormalComponent } from "./normal/article.normal.component";
 import { ArticleVideoComponent } from "./video/article.video.component";
 import { ArticleFeaturedAdComponent } from "./featured ad";
+import { ArticleVideoFeaturedComponent } from "./video-featured";
 
 export const articleEntries: Type<AbstractArticleComponent>[] = [
     ArticleFeatureComponent,
     ArticleNormalComponent,
     ArticleVideoComponent,
-    ArticleFeaturedAdComponent
+    ArticleFeaturedAdComponent,
+    ArticleVideoFeaturedComponent
 ];
 
 export const registerArticle = (articleType: ArticleType, component: Type<AbstractArticleComponent>) => {
@@ -19,14 +21,8 @@ export const registerArticle = (articleType: ArticleType, component: Type<Abstra
         throw new Error(`${component} is not yet registered.`);
     }
 
-    // if (articleMapper.has(articleType)) {
-    //     throw new Error(`${articleType} articleType already exists.`);
-    // }
-
     articleMapper.set(articleType, component);
 };
 
-// registerArticle(ArticleType.NORMAL, ArticleNormalComponent);
-// registerArticle(ArticleType.FEATURED, ArticleFeatureComponent);
-// registerArticle(ArticleType.VIDEO, ArticleVideoComponent);
+
 

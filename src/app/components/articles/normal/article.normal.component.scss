@@ -1,5 +1,3 @@
-
-
 mat-card-title{
     font-size:medium;
     font-weight:bold;
@@ -9,30 +7,9 @@ mat-card-title{
     max-width: 260px;
     overflow: hidden;
     height: auto;
+    min-height: 400px;
 }
 
-.card-content {
-    max-height: calc(8 * 1.2em); 
-    overflow: hidden;
-    position: relative;
-  }
-  
-.card-content::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background: linear-gradient(to bottom, transparent, white);
-    pointer-events: none;
-}
-
-.one-line-ellipsis {
-    white-space: nowrap; 
-    overflow: hidden; 
-    text-overflow: ellipsis; 
-    max-width: 100%; 
-  }
   
 
 
