@@ -45,7 +45,8 @@ export class AppComponent implements OnInit {
         this.results = result;
         this.mapArticle(this.results);
         this.cdr.markForCheck();
-        this.filtered_results = this.results; 
+        this.results = this.setVideoArticleHighlight();
+        this.filtered_results = this.results;
       });
   }
 
@@ -84,6 +85,19 @@ export class AppComponent implements OnInit {
       registerArticle(type, component);
       
     }
+  }
+
+  private setVideoArticleHighlight() {
+    const videoArticle = this.results.find(
+      (article) => article.type === ArticleType.VIDEO
+    );
+
+    if (videoArticle) {
+      this.videoArticleHighlight = videoArticle as VideoArticle;
+      console.log(this.videoArticleHighlight)
+    }
+
+    return this.results.filter((item) => item !== videoArticle);
   }
 
 

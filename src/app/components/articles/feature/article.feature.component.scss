@@ -1,21 +1,22 @@
 :host {
     img {
-        max-width: 100%;
-        width: auto;
+        width: 100%;
+        height: auto;
     }
 }
-
 mat-card-title{
     font-size:medium;
     font-weight:bold;
 }
 
 .feature-card {
-    //margin-right: 10px;
-    max-height: 350px;
-    overflow: hidden;
+    max-width: 260px;
 
 }
+
+  
+
+
   
 
 

@@ -9,8 +9,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {NgFor} from '@angular/common';
-
-
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatCardModule } from '@angular/material/card';
+import { MatTabsModule } from '@angular/material/tabs';
 @NgModule({
   declarations: [
     AppComponent
@@ -23,6 +24,9 @@ import {NgFor} from '@angular/common';
     MatFormFieldModule,
     NgFor,
     FormsModule,
+    FlexLayoutModule,
+    MatCardModule,
+    MatTabsModule
   ],
   providers: [ZyllemApiService],
   bootstrap: [AppComponent]

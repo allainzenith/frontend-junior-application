@@ -1,7 +1,7 @@
 
-  <mat-card class="card feature-card" fxFlex="1 1 calc(20% - 5px)">
+<mat-card class="feature-card" fxFlex.gt-xs="calc(20% - 10px)" fxFlex.lt-sm="100%">
     <mat-card-header>
-      <mat-card-title class="mat-title">{{article.title}}</mat-card-title>
+      <mat-card-title>{{article.title}}</mat-card-title>
     </mat-card-header>
-    <img mat-card-image src="{{article.adBannerUrl}}" alt="">
-  </mat-card>
+    <img src="{{article.adBannerUrl}}" alt="">
+</mat-card>

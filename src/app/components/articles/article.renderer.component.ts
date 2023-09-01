@@ -2,7 +2,7 @@ import {
     Component, ComponentFactoryResolver, Input,
     OnInit, ViewContainerRef
 } from "@angular/core";
-import { Article } from "src/app/model/article";
+import { Article, VideoArticle } from "src/app/model/article";
 import { articleMapper } from "./article.mapper";
 
 @Component({
@@ -12,6 +12,7 @@ import { articleMapper } from "./article.mapper";
 export class ArticleRendererComponent implements OnInit {
 
     @Input() articles: Article[];
+    @Input() videoArticleHighlight: VideoArticle;
 
     constructor(
         private readonly viewContainerRef: ViewContainerRef,

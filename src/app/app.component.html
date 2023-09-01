@@ -1,27 +1,34 @@
-<div class="container">
-  <div style="text-align:center">
+<header>
+  <div style="width:100%">
     <img
-      alt="Zyllem Logo"
-      src="https://static.wixstatic.com/media/15e42d_92ebfc9a2c37467ba65d2117dc5b9fa4~mv2_d_3850_1775_s_2.png/v1/fill/w_194,h_80,al_c,q_80,usm_0.66_1.00_0.01/15e42d_92ebfc9a2c37467ba65d2117dc5b9fa4~mv2_d_3850_1775_s_2.webp"
+    alt="Zyllem Logo"
+    src="https://static.wixstatic.com/media/15e42d_92ebfc9a2c37467ba65d2117dc5b9fa4~mv2_d_3850_1775_s_2.png/v1/fill/w_194,h_80,al_c,q_80,usm_0.66_1.00_0.01/15e42d_92ebfc9a2c37467ba65d2117dc5b9fa4~mv2_d_3850_1775_s_2.webp"
     />
-  </div>
 
-  <h2>Articles</h2>
+    <div style="text-align: right;width:40%">
+      <mat-tab-group animationDuration="100ms">
+        <mat-tab label="First">Content 1</mat-tab>
+        <mat-tab label="Second">Content 2</mat-tab>
+        <mat-tab label="Third">Content 3</mat-tab>
+      </mat-tab-group>
+    </div>
+    
+  </div>
+</header>
+
+<div class="container">
 
   <!-- Feel free to remove this holder -->
-  <h3>Put below a recently published video article given there is one or more video article types in the list.</h3>
+  <!-- <h3>Put below a recently published video article given there is one or more video article types in the list.</h3> -->
 
   <div class="article-video">
     <ng-container *ngIf="videoArticleHighlight">
-      <!-- put the title and the article video component here -->
-      <ng-container *ngIf="articles">
-          <article-video-component></article-video-component>
-      </ng-container>
+        <article-video-component [article]="videoArticleHighlight"></article-video-component>
     </ng-container>
   </div>
 
   <!-- Feel free to remove this holder -->
-  <h3>List of article goes here: (do not include the recently published video article in the list if you already placed it at the top)</h3>
+  <!-- <h3>List of article goes here: (do not include the recently published video article in the list if you already placed it at the top)</h3> -->
 
   <!-- For filtering the list of articles based on article type -->
   <div class="filter-container" fxLayout="row" fxLayoutAlign="end">
@@ -38,15 +45,19 @@
   </div>
 
   <!-- To put the articles inside this container -->
-  <div class="article-container" fxLayout="row">
-    <div class="article-list-holder">
+  <div class="article-container">
+    <div 
+    fxLayout="row wrap"
+    fxLayout.gt-xs="row"
+    fxLayout.lt-sm="column"
+    fxLayoutGap="10px"
+    >
       <ng-container *ngIf="articles">
         <article-renderer-component [articles]="articles"></article-renderer-component>
-      </ng-container>
+      </ng-container>     
     </div>
   </div>
   <!--.article-container-->
-
 
   <!-- <div class="bonus-point-container">
     <h3>Instructions:</h3>
